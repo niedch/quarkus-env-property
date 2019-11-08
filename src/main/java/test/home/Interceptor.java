@@ -1,8 +1,6 @@
 package test.home;
 
-import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.eclipse.microprofile.config.spi.ConfigSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,12 +8,10 @@ import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Map;
 
 @Provider
-public class Inteceptor implements ContainerRequestFilter {
-    Logger logger = LoggerFactory.getLogger(Inteceptor.class);
+public class Interceptor implements ContainerRequestFilter {
+    Logger logger = LoggerFactory.getLogger(Interceptor.class);
 
     @ConfigProperty(name = "test.property")
     String testProperty;
